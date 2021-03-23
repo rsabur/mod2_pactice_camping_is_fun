@@ -5,10 +5,10 @@ class SignupsController < ApplicationController
     end
 
     def create
-        # byebug
         @signup = Signup.new(signup_params)
         
         if @signup.valid?
+            @signup.save
             redirect_to camper_path(@signup.camper)
           else 
             flash.now[:messages] = @signup.errors.full_messages[0]
