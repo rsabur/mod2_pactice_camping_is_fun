@@ -1,0 +1,10 @@
+<h3>Camper Information</h3>
+
+<p><label>Name: </label>
+<%= @camper.name %></p>
+<p><label>Age: </label>
+<%= @camper.age %><br></p>
+<p><label>Activites: </label>
+<%= @camper.activities.join(", ") %><br></p>
+
+<%= link_to "Index", campers_path %>

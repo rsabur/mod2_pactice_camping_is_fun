@@ -1,0 +1,15 @@
+<h3>New Activity Form</h3>
+
+<% if flash[:messages] %>
+    <h4><%= flash[:messages] %>
+<% end %>
+
+<%= form_for @signup do |f| %>
+    <p><%= f.label 'Select Activity:' %>
+    <%= f.collection_select  :activity_id, Activity.all, :id, :name %></p>
+    <p><%= f.label 'Select Camper:' %>
+    <%= f.collection_select  :camper_id, Camper.all, :id, :name %></p>
+    <p><%= f.label 'Time:' %>
+    <%= f.number_field  :time%></p>
+    <%= f.submit %>
+<% end %>

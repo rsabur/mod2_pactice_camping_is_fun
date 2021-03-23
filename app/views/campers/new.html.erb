@@ -1,0 +1,14 @@
+<h3>Create a New Camper</h3>
+
+<% if flash[:messages] %>
+    <h4><%= flash[:messages] %>
+<% end%>
+
+<%= form_for @camper do |f| %>
+    <p><%= f.label 'Name: ' %>
+    <%= f.text_field :name %></p>
+    <p><%= f.label 'Age: ' %>
+    <%= f.text_field :age %></p>
+    <%= f.submit %>
+<% end %>
+
